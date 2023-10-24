@@ -60,6 +60,18 @@ impl<'a> PdfPageTextSegments<'a> {
             as PdfPageTextSegmentIndex
     }
 
+    /// Returns the starting index of the first text segment in this [PdfPageTextSegments] collection.
+    #[inline]
+    pub fn start(&self) -> i32 {
+        self.start
+    }
+
+    /// Returns the ending index of the last text segment in this [PdfPageTextSegments] collection.
+    #[inline]
+    pub fn end(&self) -> i32 {
+        self.characters + self.start
+    }
+
     /// Returns `true` if this [PdfPageTextSegments] collection is empty.
     #[inline]
     pub fn is_empty(&self) -> bool {
